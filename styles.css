@@ -1,0 +1,52 @@
+body {
+  background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%);
+  background-attachment: fixed;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+}
+
+h1 {
+  align-self: center;
+  font: 2rem "Fira Sans", sans-serif;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 15px;
+  gap: 15px;
+}
+
+.cats-img {
+  border: 10px solid white;
+}
+
+.info-table {
+  width: fit-content;
+  display: flex;
+}
+
+table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.checkbox-container {
+  display: flex;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.message-input {
+  height: 5em;
+}
+
+.message-button-flex {
+  display: flex;
+}
