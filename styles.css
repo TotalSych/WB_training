@@ -1,9 +1,10 @@
-body {
+html {
   background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%);
   background-attachment: fixed;
   display: flex;
   font-size: 16px;
   justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -16,15 +17,11 @@ h1 {
   width: fit-content;
   margin: 15px;
   gap: 15px;
+  align-items: center;
 }
 
 .cats-img {
   border: 10px solid white;
-}
-
-.info-table {
-  width: fit-content;
-  display: flex;
 }
 
 table,
@@ -33,20 +30,56 @@ td {
   border-collapse: collapse;
 }
 
-.checkbox-container {
-  display: flex;
-}
-
-.message-container {
-  display: flex;
-  flex-direction: column;
+td,
+th {
+  padding: 10px;
   width: fit-content;
+  text-align: center;
 }
 
-.message-input {
-  height: 5em;
+.text-bold,
+.text-important {
+  font-weight: bold;
 }
 
-.message-button-flex {
+.text-italic {
+  font-style: italic;
+}
+
+.text-emphasized {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.text-marked {
+  background-color: yellow;
+}
+
+.text-smaller {
+  font-size: smaller;
+}
+
+.text-deleted {
+  text-decoration: line-through;
+}
+
+.text-inserted {
+  text-decoration: underline;
+}
+
+.text-subscript {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.text-superscript {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+footer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
