@@ -7,6 +7,12 @@ html {
   flex-direction: column;
 }
 
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 h1 {
   align-self: center;
   font: 2rem "Fira Sans", sans-serif;
