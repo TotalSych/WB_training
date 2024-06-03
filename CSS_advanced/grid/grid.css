@@ -1,6 +1,6 @@
-@import url(/css/index.css);
-@import url(/css/reset.css);
-@import url(/css/global.css);
+@import url(../css/index.css);
+@import url(../css/global.css);
+@import url(../css/reset.css);
 
 a:hover {
   color: white;
