@@ -7,12 +7,17 @@ a:hover {
   background: var(--deep-blue);
 }
 
-@media only screen and (width >= 1280px) and (hover: hover) {
+@media only screen and (width >= 1280px) {
+  html {
+    height: 100%;
+  }
+
   body {
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: start;
+    max-height: 100%;
   }
 
   .container-body {
@@ -21,12 +26,14 @@ a:hover {
     flex: 2;
     gap: 20px;
     justify-content: space-between;
+    height: 100%;
   }
 
   .container-main {
     display: flex;
     flex-flow: row-reverse;
     gap: 20px;
+    height: 100%;
   }
 
   header {
@@ -38,11 +45,7 @@ a:hover {
     flex-direction: column;
     flex: 1;
     border: 5px solid yellow;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    max-height: 100%;
   }
 
   nav > p {
@@ -70,7 +73,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) and (hover: hover) {
   body {
     display: flex;
     flex-direction: column-reverse;
