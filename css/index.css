@@ -3,21 +3,8 @@
   background-attachment: fixed;
 }
 
-html {
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  flex-direction: column;
-}
-
 html:first-child {
   color: var(--deep-blue);
-}
-
-body {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 h1 {

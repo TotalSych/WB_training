@@ -13,19 +13,33 @@ a:hover {
   }
 
   body {
-    display: grid;
+    /* display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; */
     max-height: 100%;
   }
 
-  .grid-main {
+  /* .grid-main {
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-area: 1 / 1 / -1 / 3;
     gap: 20px;
     height: 100%;
+  } */
+
+  .content {
+    display: grid;
+    grid-template-areas: "header header nav" "side main nav";
+    height: 100%;
+    grid-template-rows: auto max-content;
+  }
+
+  header {
+    display: grid;
+    grid-area: 1 / 1 / 2 / 3;
+    border: 5px solid red;
+    grid-area: header;
   }
 
   nav {
@@ -33,12 +47,7 @@ a:hover {
     border: 5px solid yellow;
     overflow: hidden;
     max-height: 100%;
-  }
-
-  header {
-    display: grid;
-    grid-area: 1 / 1 / 2 / 3;
-    border: 5px solid red;
+    grid-area: nav;
   }
 
   nav > p {
@@ -47,23 +56,18 @@ a:hover {
     text-overflow: ellipsis;
   }
 
-  .main-container {
+  /* .main-container {
     display: grid;
     grid-template-columns: 100px 1fr;
     grid-template-rows: auto;
     grid-area: 2 / 1 / -1 / 3;
     gap: 20px;
-  }
+  } */
 
   main {
     grid-area: 1 / 2 / -1 / 3;
     border: 5px solid pink;
-  }
-
-  .side-content {
-    border: 5px solid green;
-    overflow: hidden;
-    height: 100%;
+    grid-area: main;
   }
 
   .side-content-container {
@@ -71,6 +75,13 @@ a:hover {
     grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
     row-gap: 40px;
+    grid-area: side;
+  }
+
+  .side-content {
+    border: 5px solid green;
+    overflow: hidden;
+    height: 100%;
   }
 }
 
