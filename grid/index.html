@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test project</title>
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h1 id="h1">Test project</h1>
+
+        <section>
+          <p>
+            <strong>HTML</strong> contains several elements for defining text
+            with a special meaning. <br />
+            Take a look at examples in the table.
+          </p>
+          <table cellspacing="2" bgcolor="#000000" class="styles-table">
+            <thead>
+              <tr bgcolor="#fff">
+                <th colspan="5">Text styles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr bgcolor="#fff">
+                <td class="text-bold">Bold text</td>
+                <td class="text-important">Important text</td>
+                <td class="text-italic">Italic text</td>
+                <td class="text-emphasized">Emphasized text</td>
+                <td><span class="text-marked">Marked text</span></td>
+              </tr>
+              <tr bgcolor="#fff">
+                <td class="text-smaller">Smaller text</td>
+                <td class="text-deleted">Deleted text</td>
+                <td class="text-inserted">Inserted text</td>
+                <td><span class="text-sub">Subscript text</span></td>
+                <td><span class="text-super">Superscript-text</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr bgcolor="#fff">
+                <td colspan="5">Footer</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </header>
+      <nav>
+        <a href="#h1" class="anchor-to-top">Return to top of the page</a>
+        <details>
+          <summary>Contact info</summary>
+          <a href="mailto:email@example.com">Send email</a>
+          <a href="tel:123456789"
+            >Make a phone call after <time datetime="9:00">9:00</time></a
+          >
+        </details>
+        <img
+          class="cats-img"
+          src="https://sun1-97.userapi.com/impg/UpQu4FUIX3Cci8YqCLMq7NuQBpJwQSYBt16Ysw/mWoL9Y3_XAE.jpg?size=810x1080&quality=96&sign=7029194e289896c770038209c6c96698&type=album"
+          alt="Cats on a laptop"
+          width="400"
+        />
+      </nav>
+      <main class="main">
+        <hr />
+        <fieldset>
+          <legend>Input types</legend>
+          <input type="button" value="Button" />
+
+          <label for="input-checkbox">Checkbox:</label>
+          <input type="checkbox" id="input-checkbox" class="checkbox" />
+
+          <label for="input-color">Color:</label>
+          <input type="color" id="input-color" />
+
+          <label for="input-date">Date:</label>
+          <input type="date" id="input-date" value="2024-05-23" />
+
+          <label for="input-datetime">Date and time:</label>
+          <input type="datetime-local" id="input-datetime" />
+
+          <label for="input-img-submit">Image as a submit button:</label>
+          <input
+            type="image"
+            src="submit.webp"
+            alt="Submit"
+            width="36"
+            height="36"
+          />
+
+          <label for="input-email">Email:</label>
+          <input
+            type="email"
+            id="input-email"
+            placeholder="something@example.com"
+          />
+
+          <label for="input-file">File:</label>
+          <input type="file" id="input-file" />
+
+          <label for="input-password">Password:</label>
+          <input type="password" id="input-password" />
+
+          <label for="radio-cat">Cat</label>
+          <input type="radio" id="radio-cat" />
+
+          <label for="radio-dog">Dog</label>
+          <input type="radio" id="radio-dog" />
+
+          <label for="input-range">Range:</label>
+          <input type="range" id="input-range" min="0" max="10" />
+
+          <div>
+            <label for="input-reset">Reset button:</label>
+            <input id="input-reset" type="text" />
+          </div>
+          <div>
+            <input type="reset" value="Reset" />
+          </div>
+
+          <label for="input-search">Search:</label>
+          <input type="search" id="input-search" />
+          <button>Search</button>
+
+          <label for="input-submit">Submit button:</label>
+          <input type="submit" id="input-submit" value="Submit" />
+
+          <label for="input-text">Text:</label>
+          <input type="text" id="input-text" />
+
+          <label for="input-number">Number:</label>
+          <input type="number" id="input-number" min="0" max="100" />
+
+          <label for="input-time">Time:</label>
+          <input type="time" id="input-time" />
+
+          <label for="phone">Phone number:</label>
+          <input type="tel" id="phone" />
+
+          <label for="input-month">Month:</label>
+          <input type="month" id="input-month" value="2024-05" />
+
+          <label for="input-week">Week:</label>
+          <input type="week" id="input-week" />
+
+          <label for="input-url">URL:</label>
+          <input
+            type="url"
+            id="input-url"
+            placeholder="https://example.com"
+          />
+
+          <label for="input-list">List:</label>
+          <input list="list-coding-languages" id="input-list" />
+          <datalist id="list-coding-languages">
+            <option value="JavaScript"></option>
+            <option value="Python"></option>
+            <option value="Java"></option>
+            <option value="C#"></option>
+            <option value="C++"></option>
+            <option value="Ruby"></option>
+            <option value="PHP"></option>
+          </datalist>
+
+          <label for="input-textarea">Textarea:</label>
+          <textarea id="input-textarea" rows="3" cols="30">
+        Type something here...
+      </textarea
+          >
+
+          <label for="input-submit-fname">First name:</label>
+          <input type="text" id="input-submit-fname" value="Name" />
+          <label for="input-submit-lname">Last name:</label>
+          <input type="hidden" id="input-submit-lname" value="Surname" />
+          <input type="submit" value="Submit" />
+        </fieldset>
+        <table>
+          <tr>
+            <th colspan="3">Lists</th>
+          </tr>
+          <tr>
+            <td>
+              <dl>
+                <dt><code>HTML</code></dt>
+                <dd>- HyperText Markup Language</dd>
+                <dt><code>CSS</code></dt>
+                <dd>- Cascading Style Sheets</dd>
+              </dl>
+            </td>
+
+            <td>
+              <ol>
+                <li>Vue</li>
+                <li>React</li>
+                <li>Angular</li>
+              </ol>
+            </td>
+            <td>
+              <ul>
+                <li><b>JavaScript</b></li>
+                <li><i>Python</i></li>
+                <li><em>Java</em></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem illo
+        quae quos fuga adipisci magnam laudantium nobis, sit officia assumenda
+        qui enim itaque sapiente voluptatum eaque at optio cum quibusdam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam
+        quo soluta repellendus tenetur rem, consequatur nostrum odit libero
+        accusamus repellat voluptatibus obcaecati voluptates iure ullam odio.
+        Ad, voluptas asperiores. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Reiciendis, maxime animi illum distinctio quae quod,
+        earum praesentium est commodi in dolores nihil dolorem nostrum at
+        laborum ea eum consequuntur necessitatibus! Lorem ipsum dolor, sit
+        amet consectetur adipisicing elit. Odit quasi nobis soluta quisquam
+        nesciunt! Vitae culpa ullam, mollitia consectetur esse, omnis voluptas
+        odio inventore necessitatibus tempora sapiente ipsam perspiciatis
+        commodi? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Nulla natus, ipsam nisi vitae a at vero, ex illo error dignissimos cum
+        quod doloremque similique cumque tempore dolor dicta illum enim. Lorem
+        ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quidem
+        placeat maxime sunt, quod incidunt ipsa doloribus, tenetur esse iure
+        recusandae quis porro illo delectus perspiciatis. Quasi soluta
+        adipisci illo.
+      </main>
+      <div class="side-content-container">
+        <div class="side-content">
+          <!-- <iframe src="index.html" title="Test project"></iframe> -->
+          <footer>
+            <a href="https://www.google.com/">Google</a>
+            <a href="https://www.youtube.com/">YouTube</a>
+            <a href="https://www.w3schools.com/">W3schools</a>
+          </footer>
+        </div>
+        <div class="side-content">
+          <figure>
+            <img
+              class="milky-way-img"
+              src="https://sun1-89.userapi.com/impg/F2Alt6vkOEbZfIt_GwTAe_BONRdFwWKcedGRTQ/ya2aQB7Jl7s.jpg?size=819x1024&quality=95&sign=77fe83e2483f1dae7b578f779e169089&type=album"
+              alt="Photo of Milky Way"
+            />
+            <figcaption>Milky Way</figcaption>
+          </figure>
+        </div>
+        <div class="side-content">
+          <picture>
+            <source
+              class="horses-src"
+              srcset="
+                https://pibig.info/uploads/posts/2021-05/1622207569_15-pibig_info-p-priroda-altaya-priroda-krasivo-foto-16.jpg
+              "
+              media="(orientation: portrait)"
+            />
+            <img
+              class="horses-img"
+              src="https://kartinki.pics/pics/uploads/posts/2022-07/1658288228_12-kartinkin-net-p-priroda-altaya-priroda-krasivo-foto-12.jpg"
+              alt="Horses in the forest"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
