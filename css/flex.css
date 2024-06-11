@@ -39,6 +39,7 @@ a:hover {
     flex: 1;
     border: 5px solid yellow;
     min-height: 100%;
+    gap: 5px;
   }
 
   nav > p {

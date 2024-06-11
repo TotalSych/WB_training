@@ -5,20 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test project</title>
     <link rel="stylesheet" href="./css/flex.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="content">
       <div class="container-body">
         <header>
           <h1 id="h1">Test project</h1>
-          <label for="number1">Number 1:</label>
-          <input type="text" id="number1" />
+          <p>Calculator</p>
+          <div class="calc-container">
+            <label for="number1">Number 1:</label>
+            <input type="text" id="number1" />
 
-          <label for="number2">Number 2:</label>
-          <input type="text" id="number2" />
+            <select id="calc-operation">
+              <option value="+" selected>+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+              <option value="%">%</option>
+              <option value="^">^</option>
+            </select>
 
-          <label for="result">Result:</label>
-          <span id="result"></span>
+            <label for="number2">Number 2:</label>
+            <input type="text" id="number2" />
+
+            <button id="calc-button">Result</button>
+            <span id="calc-result"></span>
+          </div>
+          <p>Logical operators</p>
+          <div class="logical-operators-container">
+            <label for="input1">Input 1:</label>
+            <input type="text" id="logical-input1" />
+
+            <select id="logical-operation">
+              <option value="&&" selected>&&</option>
+              <option value="||">||</option>
+              <option value="!">!</option>
+              <option value="??">??</option>
+            </select>
+
+            <label for="input2">Input 2:</label>
+            <input type="text" id="logical-input2" />
+
+            <button id="logical-button">Result</button>
+            <button id="error-button">Error</button>
+            <div id="logical-result"></div>
+          </div>
         </header>
         <div class="container-main">
           <main class="main">
@@ -124,7 +156,7 @@
 
               <label for="input-textarea">Textarea:</label>
               <textarea id="input-textarea" rows="3" cols="30">
-          Type something here...
+          Focus me
         </textarea
               >
 
@@ -226,17 +258,20 @@
               <footer>
                 <a href="https://www.google.com/">Google</a>
                 <a href="https://www.youtube.com/">YouTube</a>
-                <a href="https://www.w3schools.com/">W3schools</a>
+                <a id="w3schools-link" href="https://www.w3schools.com/"
+                  >W3schools</a
+                >
               </footer>
             </div>
             <div class="side-content">
               <figure>
                 <img
                   class="milky-way-img"
+                  id="milky-way-img"
                   src="https://sun1-89.userapi.com/impg/F2Alt6vkOEbZfIt_GwTAe_BONRdFwWKcedGRTQ/ya2aQB7Jl7s.jpg?size=819x1024&quality=95&sign=77fe83e2483f1dae7b578f779e169089&type=album"
                   alt="Photo of Milky Way"
                 />
-                <figcaption>Milky Way</figcaption>
+                <figcaption id="milky-way-figcaption">Milky Way</figcaption>
               </figure>
             </div>
             <div class="side-content">
@@ -258,7 +293,7 @@
           </div>
         </div>
       </div>
-      <nav>
+      <nav id="nav">
         <a href="#h1" class="anchor-to-top">Return to top of the page</a>
         <details>
           <summary>Contact info</summary>
@@ -269,12 +304,68 @@
         </details>
         <img
           class="cats-img"
+          id="cats-img"
           src="https://sun1-97.userapi.com/impg/UpQu4FUIX3Cci8YqCLMq7NuQBpJwQSYBt16Ysw/mWoL9Y3_XAE.jpg?size=810x1080&quality=96&sign=7029194e289896c770038209c6c96698&type=album"
           alt="Cats on a laptop"
           width="400"
         />
+        <div id="image-text"></div>
+        <div class="string-inputs-container">
+          <input type="text" id="input1" placeholder="First line" />
+          <input type="text" id="input2" placeholder="Second line" />
+        </div>
+        <div id="string-result"></div>
+        <button id="concatButton">Concatenate</button>
+        <button id="escapeButton">Escape</button>
+        <button id="templateButton">Template</button>
+        <button id="color-change-button">Change container color</button>
       </nav>
     </div>
-    <script src="script.js"></script>
+    <script>
+      // Изменение контента элемента
+      // Обработчик на наведение мыши и снятие курсора с элемента
+      const milkyWayText = document.getElementById("milky-way-figcaption");
+      const milkyWayImg = document.getElementById("milky-way-img");
+
+      milkyWayText.textContent = "Hover over Milky Way image";
+
+      milkyWayImg.addEventListener("mouseover", () => {
+        milkyWayText.textContent = "Nice";
+        milkyWayText.style.backgroundColor = "ivory";
+      });
+      milkyWayImg.addEventListener("mouseout", () => {
+        milkyWayText.textContent = "Not nice";
+        milkyWayText.style.backgroundColor = "lightgray";
+      });
+
+      // Обработчик на клик
+      // Функция подключенная к элементу
+      const colorChangeButton = document.getElementById("color-change-button");
+      const nav = document.getElementById("nav");
+
+      function randomColors() {
+        return "#" + Math.floor(Math.random() * 16777215).toString(16);
+      }
+
+      colorChangeButton.addEventListener("click", () => {
+        const body = document.querySelector("body");
+        nav.style.backgroundColor = randomColors();
+      });
+
+      // Обработчик фокуса инпута
+      const inputTextarea = document.getElementById("input-textarea");
+
+      inputTextarea.addEventListener("focus", () => {
+        inputTextarea.value = "Nice";
+      });
+
+      // Предотвращение работы события
+      const w3schoolsLink = document.getElementById("w3schools-link");
+
+      w3schoolsLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log(`${w3schoolsLink.href} link was cancelled`);
+      });
+    </script>
   </body>
 </html>
