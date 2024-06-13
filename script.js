@@ -175,3 +175,89 @@ errorButton.addEventListener("click", function () {
     logicalResult.textContent = "An error occurred";
   }
 });
+
+const milkyWayText = document.getElementById("milky-way-figcaption");
+const milkyWayImg = document.getElementById("milky-way-img");
+
+milkyWayText.textContent = "Hover over Milky Way image";
+
+milkyWayImg.addEventListener("mouseover", () => {
+  milkyWayText.textContent = "Nice";
+  milkyWayText.style.backgroundColor = "ivory";
+});
+milkyWayImg.addEventListener("mouseout", () => {
+  milkyWayText.textContent = "Not nice";
+  milkyWayText.style.backgroundColor = "lightgray";
+});
+
+const colorChangeButton = document.getElementById("color-change-button");
+const nav = document.getElementById("nav");
+
+function randomColors() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+colorChangeButton.addEventListener("click", () => {
+  nav.style.backgroundColor = randomColors();
+});
+
+const inputTextarea = document.getElementById("input-textarea");
+
+inputTextarea.addEventListener("focus", () => {
+  inputTextarea.value = "Nice";
+});
+
+const w3schoolsLink = document.getElementById("w3schools-link");
+
+w3schoolsLink.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(`${w3schoolsLink.href} link was cancelled`);
+});
+
+// Iteration 5
+
+// Arrow function
+const inputSubmit = document.getElementById("input-submit");
+inputSubmit.style.color = "red";
+
+inputSubmit.addEventListener("click", () => alert("Arrow function works!"));
+
+// Default parameter
+function multiply(a, b = 10) {
+  console.log(a * b);
+}
+
+multiply(5); // 50
+multiply(5, 2); // 10
+
+// Spread operator
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArr = [...arr1, ...arr2];
+console.log(combinedArr, "Spread");
+
+// Rest operator
+const rest = (...args) => {
+  console.log(args, "Rest");
+};
+rest(1, 2, 3, 4, 5, "Hello", true);
+
+// Деструктуризация объекта
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+const { a, b, c } = obj;
+console.log(c, c, b, b, a, a, "Destructuring object");
+
+// Строковый шаблон
+const name1 = "John";
+const name2 = "Jane";
+const age = 10;
+
+const message = `${name1} is ${
+  age * 5
+} years old and his daughter ${name2} is ${age + 15} years old`;
+
+console.log(message);

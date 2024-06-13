@@ -321,51 +321,5 @@
         <button id="color-change-button">Change container color</button>
       </nav>
     </div>
-    <script>
-      // Изменение контента элемента
-      // Обработчик на наведение мыши и снятие курсора с элемента
-      const milkyWayText = document.getElementById("milky-way-figcaption");
-      const milkyWayImg = document.getElementById("milky-way-img");
-
-      milkyWayText.textContent = "Hover over Milky Way image";
-
-      milkyWayImg.addEventListener("mouseover", () => {
-        milkyWayText.textContent = "Nice";
-        milkyWayText.style.backgroundColor = "ivory";
-      });
-      milkyWayImg.addEventListener("mouseout", () => {
-        milkyWayText.textContent = "Not nice";
-        milkyWayText.style.backgroundColor = "lightgray";
-      });
-
-      // Обработчик на клик
-      // Функция подключенная к элементу
-      const colorChangeButton = document.getElementById("color-change-button");
-      const nav = document.getElementById("nav");
-
-      function randomColors() {
-        return "#" + Math.floor(Math.random() * 16777215).toString(16);
-      }
-
-      colorChangeButton.addEventListener("click", () => {
-        const body = document.querySelector("body");
-        nav.style.backgroundColor = randomColors();
-      });
-
-      // Обработчик фокуса инпута
-      const inputTextarea = document.getElementById("input-textarea");
-
-      inputTextarea.addEventListener("focus", () => {
-        inputTextarea.value = "Nice";
-      });
-
-      // Предотвращение работы события
-      const w3schoolsLink = document.getElementById("w3schools-link");
-
-      w3schoolsLink.addEventListener("click", function (e) {
-        e.preventDefault();
-        console.log(`${w3schoolsLink.href} link was cancelled`);
-      });
-    </script>
   </body>
 </html>
