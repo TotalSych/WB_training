@@ -138,40 +138,34 @@ logicalButton.addEventListener("click", function () {
 
     logicalResult.textContent = result;
   } catch (error) {
-    console.error(error);
+    console.error(`Error: ${error.message}`);
     logicalResult.textContent = "An error occurred";
   }
 });
 
 errorButton.addEventListener("click", function () {
   try {
-    const value1 = logicalInput1.value;
-    const value2 = logicalInput2.value;
-
-    let result = "";
-
-    switch (logicalOperation.value) {
-      case "&&":
-        result = value1 && value2;
-        break;
-      case "||":
-        result = value1 || value2;
-        break;
-      case "!":
-        result = !value1;
-        break;
-      case "??":
-        result = value1 ?? value2;
-        break;
-      default:
-        result = "Invalid operator";
-    }
-
-    console.log(x);
-
-    logicalResult.textContent = result;
+    throw new Error("An error occurred");
   } catch (error) {
     console.error(error);
-    logicalResult.textContent = "An error occurred";
+    logicalResult.textContent = `${error}`;
   }
+});
+
+// Методы консоли
+const consoleButton = document.getElementById("console-button");
+
+consoleButton.addEventListener("click", function consoleLog() {
+  console.log("Console Methods");
+  console.clear();
+  console.time("Execution time took");
+  console.group("Group Title");
+  console.log("Message 1");
+  console.log("Message 2");
+  console.groupEnd();
+  console.info("Info");
+  console.error("Error");
+  console.warn("Warn");
+  console.assert(1 === 2, "1 doesn't equal 2");
+  console.timeEnd("Execution time took");
 });
