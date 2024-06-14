@@ -41,10 +41,12 @@ function applyOperator(op, num1, num2) {
   }
 }
 
-calcResultButton.addEventListener("click", function () {
+const calcResultHandler = function () {
   const result = applyOperator(op, num1, num2);
   calcResult.textContent = result;
-});
+};
+
+calcResultButton.addEventListener("click", calcResultHandler);
 
 // Работа со строками и вывод в консоль
 const stringInput1 = document.getElementById("input1");
@@ -231,6 +233,7 @@ const message = `${name1} is ${
 } years old and his daughter ${name2} is ${age + 15} years old`;
 
 console.log(message);
+
 // Методы консоли
 const consoleButton = document.getElementById("console-button");
 
@@ -247,4 +250,11 @@ consoleButton.addEventListener("click", function consoleLog() {
   console.warn("Warn");
   console.assert(1 === 2, "1 doesn't equal 2");
   console.timeEnd("Execution time took");
+});
+
+// Убираем слушатели событий
+const removeListenerButton = document.getElementById("remove-listener-button");
+
+removeListenerButton.addEventListener("click", function () {
+  calcResultButton.removeEventListener("click", calcResultHandler);
 });
