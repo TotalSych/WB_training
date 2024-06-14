@@ -10,11 +10,11 @@ let num1 = 0;
 let num2 = 0;
 let op = "+";
 
-calcInput1.addEventListener("keyup", function () {
+calcInput1.addEventListener("input", function () {
   num1 = +this.value;
 });
 
-calcInput2.addEventListener("keyup", function () {
+calcInput2.addEventListener("input", function () {
   num2 = +this.value;
 });
 
@@ -25,31 +25,25 @@ calcOperation.addEventListener("click", function () {
 function applyOperator(op, num1, num2) {
   switch (op) {
     case "+":
-      calcResult.textContent = num1 + num2;
-      break;
+      return num1 + num2;
     case "-":
-      calcResult.textContent = num1 - num2;
-      break;
+      return num1 - num2;
     case "*":
-      calcResult.textContent = num1 * num2;
-      break;
+      return num1 * num2;
     case "/":
-      calcResult.textContent = num1 / num2;
-      break;
+      return num1 / num2;
     case "%":
-      calcResult.textContent = num1 % num2;
-      break;
+      return num1 % num2;
     case "^":
-      calcResult.textContent = Math.pow(num1, num2);
-      break;
+      return Math.pow(num1, num2);
     default:
       throw Error(`unsupported operator: ${op}`);
   }
 }
 
 calcResultButton.addEventListener("click", function () {
-  applyOperator(op, num1, num2);
-  calcResult.textContent = calcResult.textContent;
+  const result = applyOperator(op, num1, num2);
+  calcResult.textContent = result;
 });
 
 // Работа со строками и вывод в консоль
