@@ -1,0 +1,164 @@
+:root {
+  background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%);
+  background-attachment: fixed;
+}
+
+html:first-child {
+  color: var(--deep-blue);
+}
+
+h1 {
+  align-self: center;
+  font: 2rem "Fira Sans", sans-serif;
+}
+
+h1::before {
+  content: "«";
+  color: blue;
+}
+
+h1::after {
+  content: "»";
+  color: red;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 15px;
+  align-items: center;
+}
+
+article {
+  display: grid;
+}
+
+p {
+  position: static;
+}
+
+article > section > p:first-letter {
+  font-size: 32px;
+}
+
+p::selection {
+  color: white;
+  background-color: var(--deep-blue);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--deep-blue);
+}
+
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 10px;
+  width: fit-content;
+  text-align: center;
+}
+
+.text-bold,
+.text-important {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-emphasized {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.text-marked {
+  background-color: yellow;
+}
+
+.text-smaller {
+  font-size: smaller;
+}
+
+.text-deleted {
+  text-decoration: line-through;
+}
+
+.text-inserted {
+  text-decoration: underline;
+}
+
+.text-sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.text-super {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.checkbox:checked {
+  outline: 2px dashed red;
+}
+
+hr + fieldset > label ~ input:focus-visible {
+  border: 10px solid var(--deep-blue);
+}
+
+fieldset > legend ~ input:nth-child(odd) {
+  color: grey;
+}
+
+input[type="button"]:active {
+  background-color: aqua;
+}
+
+ul li::marker {
+  color: orange;
+}
+
+li:first-of-type {
+  color: var(--deep-blue);
+  font-style: italic;
+}
+
+li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+body > footer > a:focus {
+  font-weight: bold;
+  color: var(--bronze);
+  border: 10px dotted var(--deep-blue);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.anchor-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #feffffd7;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.milky-way-img,
+.horses-img {
+  height: 100px;
+}
