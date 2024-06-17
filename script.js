@@ -258,3 +258,82 @@ const removeListenerButton = document.getElementById("remove-listener-button");
 removeListenerButton.addEventListener("click", function () {
   calcResultButton.removeEventListener("click", calcResultHandler);
 });
+
+// Iteration 6
+
+// Получение текущего URL и alert
+const getURLButton = document.getElementById("get-url-button");
+const getCurURL = () => {
+  alert(`Current URL: ${window.location.href}`);
+};
+getURLButton.addEventListener("click", getCurURL);
+
+const array1 = [1, 2, 3];
+const array2 = [...arr1]; // Создает новый массив с теми же элементами, что и arr1
+
+console.log(array1, array2);
+
+function sum(...args) {
+  return args.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // 15
+
+// Cookie
+
+document.cookie = "name=John; expires=Thu, 17 Jul 2024 12:00:00 GMT; path=/";
+console.log(document.cookie);
+
+const cookies = document.cookie;
+const cookieArray = cookies.split(";");
+console.log(cookieArray);
+
+for (let i = 0; i < cookieArray.length; i++) {
+  const cookie = cookieArray[i].trim();
+  if (cookie.startsWith("name=")) {
+    const cookieValue = cookie.substring("name=".length).trim();
+    console.log(cookieValue);
+  }
+}
+
+document.cookie = `name=John; expires=${new Date(0)}; path=/`;
+console.log(document.cookie);
+
+// Local Storage
+localStorage.setItem("name", "John");
+console.log(localStorage.getItem("name"));
+localStorage.removeItem("name");
+console.log(localStorage.getItem("name"));
+
+// Session Storage
+sessionStorage.setItem("name", "John");
+console.log(sessionStorage.getItem("name"));
+sessionStorage.removeItem("name");
+console.log(sessionStorage.getItem("name"));
+
+// Debugger
+const debuggerFunction = (num1, num2, operator) => {
+  debugger;
+
+  let result;
+
+  switch (operator) {
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    default:
+      throw new Error("Unsupported operator");
+  }
+
+  return result;
+};
+
+try {
+  const result = debuggerFunction(1, 2, "+");
+  console.log(result);
+} catch (error) {
+  console.error(error.message);
+}
