@@ -1,0 +1,39 @@
+.main {
+  display: grid;
+  padding: 15px;
+  grid-area: 2/2/3/2;
+  border: 2px solid black;
+  height: 100%;
+  gap: 100px;
+
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+
+    &__buttonContainer {
+      display: flex;
+      align-items: center;
+
+      &__colorPicker {
+        width: 60px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      &__button {
+        height: fit-content;
+        border: 2px solid black;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

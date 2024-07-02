@@ -1,0 +1,40 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #222;
+  }
+
+  &__active {
+    color: green;
+  }
+}
+
+.buttonsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigationButton {
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
