@@ -1,9 +1,4 @@
 .main {
   border: 2px solid black;
   padding: 15px;
-  max-height: 100%;
-
-  &__content {
-    overflow: auto;
-  }
 }

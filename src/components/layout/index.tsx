@@ -5,12 +5,16 @@ import { Aside } from "components/aside";
 import styles from "./layout.module.scss";
 
 export const Layout = () => {
-  const [text, setText] = useState("");
-  return (
-    <div className={styles.layout}>
-      <Header className={styles.layout__header} text={text} setText={setText} />
-      <Aside className={styles.layout__aside} />
-      <ConfiguredRouter />
-    </div>
-  );
+    const [ text, setText ] = useState("");
+    return (
+        <div className={styles.layout}>
+            <Aside className={styles.layout__aside}/>
+            <div className={styles['layout__content-wrapper']}>
+                <Header className={styles.layout__header} text={text} setText={setText}/>
+                <div className={styles.layout__content}>
+                    <ConfiguredRouter/>
+                </div>
+            </div>
+        </div>
+    );
 };
