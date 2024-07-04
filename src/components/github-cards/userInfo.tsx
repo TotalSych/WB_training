@@ -1,22 +1,23 @@
 import { GithubRepo } from "types/github-repo";
 import styles from "./userInfo.module.scss";
-import cn from "classnames";
 
 type UserInfoProps = {
   repos: Partial<GithubRepo>[];
 };
 
 export const UserInfo: React.FC<UserInfoProps> = ({ repos }) => {
+  const owner = repos?.[0]?.owner;
+
   return (
-    <div className={cn(styles.userInfo)}>
-      {repos?.[0]?.owner?.avatar_url && (
+    <div className={styles["user-info"]}>
+      {owner?.avatar_url && (
         <img
-          className={styles.userInfo__avatar}
-          src={repos?.[0]?.owner?.avatar_url}
+          className={styles["user-info__avatar"]}
+          src={owner?.avatar_url}
           alt="User avatar"
         />
       )}
-      {repos?.[0]?.owner?.login}
+      {owner?.login}
     </div>
   );
 };

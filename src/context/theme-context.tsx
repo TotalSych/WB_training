@@ -1,35 +1,45 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface ITheme {
-  theme: {
+  theme: Partial<{
     backgroundTheme: string;
     colorTheme: string;
-  };
+  }>;
   setTheme: (value: ITheme["theme"]) => void;
 }
 
 const ThemeContext = createContext<ITheme | null>(null);
+
+export const defaultThemeValues: ITheme["theme"] = {
+  backgroundTheme: "#fff",
+  colorTheme: "#222",
+};
 
 interface IProps {
   children: React.ReactNode;
 }
 
 export const ThemeProvider = ({ children }: IProps) => {
-  const [theme, setTheme] = useState({
-    backgroundTheme: "#fff",
-    colorTheme: "#222",
-  });
+  const [theme, setTheme] = useState(defaultThemeValues);
 
   const setThemeHandler = (value: ITheme["theme"]) => {
-    setTheme(value);
-    document.documentElement.style.setProperty(
-      "--background-theme",
-      value.backgroundTheme
-    );
-    document.documentElement.style.setProperty(
-      "--color-theme",
-      value.colorTheme
-    );
+    setTheme((prevValue) => {
+      console.log("prevValue", prevValue);
+      console.log("value", value);
+      return { ...prevValue, ...value };
+    });
+    if (value?.backgroundTheme) {
+      document.documentElement.style.setProperty(
+        "--background-theme",
+        value.backgroundTheme
+      );
+    }
+    if (value?.colorTheme) {
+      document.documentElement.style.setProperty(
+        "--color-theme",
+        value.colorTheme
+      );
+    }
   };
 
   return (

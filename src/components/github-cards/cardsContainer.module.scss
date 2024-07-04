@@ -1,6 +1,11 @@
-.cardsContainer {
+.cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 300px;
   gap: 20px;
+
+  &__content {
+    flex: 1;
+    overflow: auto;
+  }
 }

@@ -8,7 +8,7 @@ type RepoCardsProps = {
 
 const RepoCards: React.FC<RepoCardsProps> = ({ repo }) => {
   return (
-    <div className={styles.repoCard}>
+    <div className={styles["repo-card"]}>
       <p>{repo.full_name}</p>
       <p> {repo.language}</p>
       <p>Visibility: {repo.visibility}</p>

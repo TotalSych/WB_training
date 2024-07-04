@@ -1,83 +1,70 @@
-import React, { useState } from "react";
-import style from "./settings.module.scss";
-import { useTheme } from "context/theme-context";
+import { defaultThemeValues, useTheme } from "context/theme-context";
+import React from "react";
+import styles from "./settings.module.scss";
 
 export const SettingsPage: React.FC = () => {
-  const themeValues = useTheme();
-  const setTheme = themeValues?.setTheme;
-
-  const [backgroundTheme, setBackgroundTheme] = useState<string>(
-    themeValues?.theme?.backgroundTheme || ""
-  );
-  const [colorTheme, setColorTheme] = useState<string>(
-    themeValues?.theme?.colorTheme || ""
-  );
+  const { theme, setTheme } = useTheme() ?? {};
 
   const changeBackgroundTheme = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setBackgroundTheme(event.target.value);
-    setTheme?.({ backgroundTheme: event.target.value, colorTheme });
+    setTheme?.({ backgroundTheme: event.target.value });
   };
 
   const resetBackgroundTheme = () => {
-    setBackgroundTheme("#fff");
-    setTheme?.({ backgroundTheme: "#fff", colorTheme });
+    setTheme?.({ backgroundTheme: defaultThemeValues.backgroundTheme });
   };
 
   const changeColorTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setColorTheme(event.target.value);
-    setTheme?.({ backgroundTheme, colorTheme: event.target.value });
+    setTheme?.({ colorTheme: event.target.value });
   };
 
   const resetColorTheme = () => {
-    setColorTheme("#222");
-    setTheme?.({ backgroundTheme, colorTheme: "#222" });
+    setTheme?.({ colorTheme: defaultThemeValues.colorTheme });
   };
 
+  console.log(theme);
+
   return (
-    <div className={style.main}>
-      <h1 className={style.main__title}>Settings page</h1>
-      <div className={style.main__content}>
-        <div className={style.main__content__buttonContainer}>
+    <div className={styles.main}>
+      <h1 className={styles.main__title}>Settings page</h1>
+      <div className={styles.main__content}>
+        <div className={styles["main__button-container"]}>
           <label
-            className={style.main__content__buttonContainer__label}
+            className={styles["main__button-label"]}
             htmlFor="background-color-picker"
           >
             Background color:
           </label>
           <input
             id="background-color-picker"
-            className={style.main__content__buttonContainer__colorPicker}
+            className={styles["main__color-picker"]}
             type="color"
-            value={backgroundTheme}
+            value={theme?.backgroundTheme}
             onChange={changeBackgroundTheme}
           />
           <button
-            className={style.main__content__buttonContainer__button}
+            className={styles.main__button}
             onClick={resetBackgroundTheme}
           >
             Reset
           </button>
         </div>
-        <div className={style.main__content__buttonContainer}>
+        <div className={styles["main__button-container"]}>
           <label
-            className={style.main__content__buttonContainer__label}
+            className={styles["main__button-label"]}
             htmlFor="text-color-picker"
           >
             Text color:
           </label>
           <input
             id="text-color-picker"
-            className={style.main__content__buttonContainer__colorPicker}
+            className={styles["main__color-picker"]}
             type="color"
-            value={colorTheme}
+            value={theme?.colorTheme}
             onChange={changeColorTheme}
           />
-          <button
-            className={style.main__content__buttonContainer__button}
-            onClick={resetColorTheme}
-          >
+          <button className={styles.main__button} onClick={resetColorTheme}>
             Reset
           </button>
         </div>

@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import styles from "./header.module.scss";
 import cn from "classnames";
 
@@ -9,6 +10,9 @@ interface IProps {
 }
 
 export const Header = ({ setText, text, className, title }: IProps) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
   return (
     <header className={cn(styles.header, className)}>
       <div>
@@ -17,10 +21,10 @@ export const Header = ({ setText, text, className, title }: IProps) => {
         Request
       </div>
       <input
-        className={cn(styles.header__input)}
+        className={styles.header__input}
         type="text"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={handleChange}
       />
     </header>
   );

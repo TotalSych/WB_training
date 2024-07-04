@@ -16,28 +16,28 @@
     display: flex;
     justify-content: space-between;
     height: fit-content;
+  }
 
-    &__buttonContainer {
-      display: flex;
-      align-items: center;
+  &__button-container {
+    display: flex;
+    align-items: center;
+  }
 
-      &__label {
-        cursor: pointer;
-      }
+  &__button-label {
+    cursor: pointer;
+  }
 
-      &__colorPicker {
-        width: 60px;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
+  &__color-picker {
+    width: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-      &__button {
-        height: fit-content;
-        border: 2px solid var(--color-theme);
-        background-color: white;
-        cursor: pointer;
-      }
-    }
+  &__button {
+    height: fit-content;
+    border: 2px solid var(--color-theme);
+    background-color: white;
+    cursor: pointer;
   }
 }

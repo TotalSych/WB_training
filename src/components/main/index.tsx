@@ -5,9 +5,5 @@ type MainProps = {
 };
 
 export const Main: React.FC<MainProps> = ({ children }) => {
-  return (
-    <div className={styles.main}>
-      <div className={styles.main__content}>{children}</div>
-    </div>
-  );
+  return <div className={styles.main}>{children}</div>;
 };
