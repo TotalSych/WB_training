@@ -21,16 +21,20 @@
       display: flex;
       align-items: center;
 
+      &__label {
+        cursor: pointer;
+      }
+
       &__colorPicker {
         width: 60px;
+        background: none;
         border: none;
-        background-color: white;
         cursor: pointer;
       }
 
       &__button {
         height: fit-content;
-        border: 2px solid black;
+        border: 2px solid var(--color-theme);
         background-color: white;
         cursor: pointer;
       }

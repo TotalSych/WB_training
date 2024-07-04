@@ -5,17 +5,19 @@ interface IProps {
   className?: string;
   text: string;
   setText: (value: string) => void;
+  title: string;
 }
 
-export const Header = ({ setText, text, className }: IProps) => {
+export const Header = ({ setText, text, className, title }: IProps) => {
   return (
     <header className={cn(styles.header, className)}>
       <div>
-        Async
+        {title}
         <br />
         Request
       </div>
       <input
+        className={cn(styles.header__input)}
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}

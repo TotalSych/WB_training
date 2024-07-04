@@ -4,6 +4,8 @@
   padding: 20px;
   display: flex;
   gap: 20px;
+  background-color: var(--background-theme);
+  color: var(--color-theme);
 
   &__content-wrapper {
     flex: 1;

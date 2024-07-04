@@ -1,8 +1,8 @@
 import cn from "classnames";
+import { SwitchTheme } from "components/switch-theme";
 import { NavLink, useNavigate } from "react-router-dom";
 import { PATHS } from "router/paths";
 import styles from "./aside.module.scss";
-import { Switch } from "components/switch";
 
 interface IProps {
   className?: string;
@@ -55,7 +55,7 @@ export const Aside = ({ className }: IProps) => {
           </button>
         </div>
       </nav>
-      <Switch />
+      <SwitchTheme />
     </aside>
   );
 };
