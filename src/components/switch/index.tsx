@@ -1,4 +1,4 @@
-import styles from "./switch.module.scss";
+import styles from "./index.module.scss";
 
 interface IProps {
   onChange: () => void;

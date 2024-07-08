@@ -1,6 +1,6 @@
 import { defaultThemeValues, useTheme } from "context/theme-context";
 import React from "react";
-import styles from "./settings.module.scss";
+import styles from "./index.module.scss";
 
 export const SettingsPage: React.FC = () => {
   const { theme, setTheme } = useTheme() ?? {};
@@ -22,8 +22,6 @@ export const SettingsPage: React.FC = () => {
   const resetColorTheme = () => {
     setTheme?.({ colorTheme: defaultThemeValues.colorTheme });
   };
-
-  console.log(theme);
 
   return (
     <div className={styles.main}>

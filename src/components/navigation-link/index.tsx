@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import styles from "./navigation-link.module.scss";
+import styles from "./index.module.scss";
 import cn from "classnames";
 import { PATHS } from "router/paths";
 
@@ -39,6 +39,14 @@ export const NavigationLink = () => {
         to={PATHS.SETTINGS}
       >
         Settings
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          cn(styles.navigation__link, { [styles.navigation__active]: isActive })
+        }
+        to={PATHS.FORM}
+      >
+        Form
       </NavLink>
       <div className={styles.navigation__buttons}>
         <button className={styles.navigation__button} onClick={handlePrevClick}>
