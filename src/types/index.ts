@@ -6,6 +6,9 @@ export const mockRepos: Partial<GithubRepo>[] = [
     full_name: "Repo 1",
     language: "JS",
     visibility: "public",
+    description: "This is repo 1",
+    html_url: "HTML url",
+    commits_url: "Commits url",
     url: "url",
     created_at: "2023-03-15T14:12:49Z",
     owner: {
@@ -75,7 +78,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -87,7 +90,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 8,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -99,7 +102,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 9,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -111,7 +114,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 10,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -123,7 +126,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 11,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -135,7 +138,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 12,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -147,7 +150,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 13,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",
@@ -159,7 +162,7 @@ export const mockRepos: Partial<GithubRepo>[] = [
     },
   },
   {
-    id: 6,
+    id: 14,
     full_name: "Repo 6",
     language: "test",
     visibility: "public",

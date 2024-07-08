@@ -1,14 +1,14 @@
 import React from "react";
-import RepoCards from "./cards";
+import RepoCard from "./components/card";
 import { GithubRepo } from "types/github-repo";
-import styles from "./cardsContainer.module.scss";
+import styles from "./index.module.scss";
 import cn from "classnames";
 
-type CardsContainerProps = {
+type GithubCardsProps = {
   repos: Partial<GithubRepo>[];
 };
 
-const CardsContainer: React.FC<CardsContainerProps> = ({ repos }) => {
+const GithubCards: React.FC<GithubCardsProps> = ({ repos }) => {
   return (
     <div
       className={cn(
@@ -17,9 +17,9 @@ const CardsContainer: React.FC<CardsContainerProps> = ({ repos }) => {
       )}
     >
       {repos.map((repo) => (
-        <RepoCards key={repo.id} repo={repo} />
+        <RepoCard key={repo.id} repo={repo} />
       ))}
     </div>
   );
 };
-export default CardsContainer;
+export default GithubCards;

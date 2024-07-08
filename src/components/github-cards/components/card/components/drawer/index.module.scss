@@ -1,0 +1,12 @@
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  padding: 10px;
+
+  &__button {
+    width: 50%;
+    align-self: center;
+  }
+}

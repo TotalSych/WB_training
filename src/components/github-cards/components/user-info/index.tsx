@@ -1,5 +1,5 @@
 import { GithubRepo } from "types/github-repo";
-import styles from "./userInfo.module.scss";
+import styles from "./index.module.scss";
 
 type UserInfoProps = {
   repos: Partial<GithubRepo>[];
