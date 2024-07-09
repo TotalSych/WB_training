@@ -14,11 +14,4 @@ $headerHeight: 100px;
   @media #{$mobile} {
     display: block;
   }
-  &__input {
-    width: 80%;
-    font-size: 16px;
-    color: var(--color-theme);
-    border: 2px solid var(--color-theme);
-    background: none;
-  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { GithubRepo } from "types/github-repo";
-import { CardDrawer } from "./components/drawer";
+import { CardDrawer } from "./components/card-drawer";
 import styles from "./index.module.scss";
 
 type RepoCardsProps = {
@@ -9,7 +9,6 @@ type RepoCardsProps = {
 
 const RepoCards: React.FC<RepoCardsProps> = ({ repo }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  console.log(repo);
   return (
     <div>
       <div className={styles["repo-card"]} onClick={() => setIsOpen(true)}>

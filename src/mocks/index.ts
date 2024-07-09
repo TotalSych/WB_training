@@ -1,4 +1,4 @@
-import { GithubRepo } from "./github-repo";
+import { GithubRepo } from "../types/github-repo";
 
 export const mockRepos: Partial<GithubRepo>[] = [
   {

@@ -1,6 +1,6 @@
 import { Drawer } from "components/drawer";
 import React from "react";
-import { mockRepos } from "types";
+import { mockRepos } from "mocks";
 import styles from "./index.module.scss";
 
 type CardDrawerProps = {

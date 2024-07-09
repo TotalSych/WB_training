@@ -24,8 +24,6 @@ export const ThemeProvider = ({ children }: IProps) => {
 
   const setThemeHandler = (value: ITheme["theme"]) => {
     setTheme((prevValue) => {
-      console.log("prevValue", prevValue);
-      console.log("value", value);
       return { ...prevValue, ...value };
     });
     if (value?.backgroundTheme) {

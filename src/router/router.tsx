@@ -3,7 +3,7 @@ import { PromisePage } from "pages/promise";
 import { SettingsPage } from "pages/settings";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { PATHS } from "./paths";
-import { mockRepos } from "types";
+import { mockRepos } from "mocks";
 import { FormPage } from "pages/form";
 
 export const ConfiguredRouter = () => {

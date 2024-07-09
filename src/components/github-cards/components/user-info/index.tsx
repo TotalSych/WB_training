@@ -2,12 +2,10 @@ import { GithubRepo } from "types/github-repo";
 import styles from "./index.module.scss";
 
 type UserInfoProps = {
-  repos: Partial<GithubRepo>[];
+  owner: Partial<GithubRepo>["owner"];
 };
 
-export const UserInfo: React.FC<UserInfoProps> = ({ repos }) => {
-  const owner = repos?.[0]?.owner;
-
+export const UserInfo: React.FC<UserInfoProps> = ({ owner }) => {
   return (
     <div className={styles["user-info"]}>
       {owner?.avatar_url && (
