@@ -9,6 +9,10 @@ type RepoCardsProps = {
 
 const RepoCards: React.FC<RepoCardsProps> = ({ repo }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  // repoName
+  // setRepoName
+  // repo.name
+  // передать в carddrawer reponame
   return (
     <div>
       <div className={styles["repo-card"]} onClick={() => setIsOpen(true)}>

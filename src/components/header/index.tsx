@@ -4,12 +4,17 @@ import styles from "./index.module.scss";
 
 interface IProps {
   className?: string;
-  text: string;
-  setText: (value: string) => void;
+  githubNickname: string;
+  setGithubNickname: (value: string) => void;
   title: string;
 }
 
-export const Header = ({ setText, text, className, title }: IProps) => {
+export const Header = ({
+  setGithubNickname,
+  githubNickname,
+  className,
+  title,
+}: IProps) => {
   return (
     <header className={cn(styles.header, className)}>
       <div>
@@ -17,7 +22,10 @@ export const Header = ({ setText, text, className, title }: IProps) => {
         <br />
         Request
       </div>
-      <DebouncedInputValue text={text} setText={setText} />
+      <DebouncedInputValue
+        githubNickname={githubNickname}
+        setGithubNickname={setGithubNickname}
+      />
     </header>
   );
 };

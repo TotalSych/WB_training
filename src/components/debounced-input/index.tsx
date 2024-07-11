@@ -2,21 +2,25 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 interface IProps {
-  text: string;
-  setText: (value: string) => void;
+  githubNickname: string;
+  setGithubNickname: (value: string) => void;
 }
 
-const DebouncedInputValue: React.FC<IProps> = ({ setText, text }) => {
-  const [inputValue, setInputValue] = useState(text);
-  const [debouncedInputValue, setDebouncedInputValue] = useState(text);
+const DebouncedInputValue: React.FC<IProps> = ({
+  setGithubNickname,
+  githubNickname,
+}) => {
+  const [inputValue, setInputValue] = useState(githubNickname);
+  const [debouncedInputValue, setDebouncedInputValue] =
+    useState(githubNickname);
 
   useEffect(() => {
     const debounceTimeoutId = setTimeout(() => {
-      setText(debouncedInputValue);
+      setGithubNickname(debouncedInputValue);
     }, 1000);
 
     return () => clearTimeout(debounceTimeoutId);
-  }, [debouncedInputValue, setText]);
+  }, [debouncedInputValue, setGithubNickname]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);

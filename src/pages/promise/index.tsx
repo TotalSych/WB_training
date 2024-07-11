@@ -1,18 +1,65 @@
 import { Header } from "components/header";
+import { Loader } from "components/loader";
+import { Main } from "components/main";
 import { Repos } from "components/repos";
-import { useState } from "react";
-import { GithubRepo } from "types/github-repo";
+import { useEffect, useState } from "react";
+import styles from "./index.module.scss";
+import { fetchRepos } from "api";
 
-type PromisePageProps = {
-  repos: Partial<GithubRepo>[];
-};
+export const PromisePage = () => {
+  const [repos, setRepos] = useState([]);
+  const [githubNickname, setGithubNickname] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-export const PromisePage: React.FC<PromisePageProps> = ({ repos }) => {
-  const [text, setText] = useState("");
+  useEffect(() => {
+    const fetchReposAndUpdateState = () => {
+      if (!githubNickname) {
+        return;
+      }
+
+      setIsLoading(true);
+      fetchRepos(githubNickname)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch repos");
+          }
+          return response.json();
+        })
+        .then((repos) => {
+          setRepos(repos);
+          setError(null);
+        })
+        .catch((error) => {
+          setRepos([]);
+          setError(error.message);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    };
+
+    fetchReposAndUpdateState();
+  }, [githubNickname]);
+
   return (
-    <div>
-      <Header text={text} setText={setText} title="Promise" />
-      <Repos repos={repos} />
-    </div>
+    <>
+      <Header
+        githubNickname={githubNickname}
+        setGithubNickname={setGithubNickname}
+        title="Promise"
+      />
+      {isLoading ? (
+        <Main>
+          <Loader />
+        </Main>
+      ) : error ? (
+        <Main>
+          <p className={styles.error}>{error}</p>
+        </Main>
+      ) : (
+        <Repos repos={repos} />
+      )}
+    </>
   );
 };

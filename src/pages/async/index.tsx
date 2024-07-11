@@ -1,18 +1,61 @@
+import { fetchRepos } from "api";
 import { Header } from "components/header";
+import { Loader } from "components/loader";
+import { Main } from "components/main";
 import { Repos } from "components/repos";
-import { useState } from "react";
-import { GithubRepo } from "types/github-repo";
+import { useEffect, useState } from "react";
+import styles from "./index.module.scss";
 
-type AsyncPageProps = {
-  repos: Partial<GithubRepo>[];
-};
+export const AsyncPage = () => {
+  const [repos, setRepos] = useState([]);
+  const [githubNickname, setGithubNickname] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-export const AsyncPage: React.FC<AsyncPageProps> = ({ repos }) => {
-  const [text, setText] = useState("");
+  useEffect(() => {
+    const fetchReposAndUpdateState = async () => {
+      if (!githubNickname) {
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        const response = await fetchRepos(githubNickname);
+        if (!response.ok) {
+          throw new Error("Failed to fetch repos");
+        }
+        const repos = await response.json();
+        setRepos(repos);
+        setError(null);
+      } catch (error: any) {
+        setRepos([]);
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchReposAndUpdateState();
+  }, [githubNickname]);
+
   return (
-    <div>
-      <Header text={text} setText={setText} title="Async" />
-      <Repos repos={repos} />
-    </div>
+    <>
+      <Header
+        githubNickname={githubNickname}
+        setGithubNickname={setGithubNickname}
+        title="Async"
+      />
+      {isLoading ? (
+        <Main>
+          <Loader />
+        </Main>
+      ) : error ? (
+        <Main>
+          <p className={styles.error}>{error}</p>
+        </Main>
+      ) : (
+        <Repos repos={repos} />
+      )}
+    </>
   );
 };
