@@ -1,0 +1,34 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-size: 22px;
+  font-weight: bold;
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-theme);
+  }
+
+  &__active {
+    color: green;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-theme);
+  }
+}

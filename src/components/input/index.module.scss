@@ -1,0 +1,13 @@
+.input {
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__input {
+    background: none;
+    border: 1px solid var(--color-theme);
+    color: var(--color-theme);
+  }
+}
