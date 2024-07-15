@@ -2,7 +2,7 @@ import { defaultThemeValues, useTheme } from "context/theme-context";
 import React from "react";
 import styles from "./index.module.scss";
 
-export const SettingsPage: React.FC = () => {
+export const SettingsPage = () => {
   const { theme, setTheme } = useTheme() ?? {};
 
   const changeBackgroundTheme = (

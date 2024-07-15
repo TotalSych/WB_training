@@ -1,14 +1,18 @@
-import React from "react";
-import RepoCard from "./components/card";
-import { GithubRepo } from "types/github-repo";
-import styles from "./index.module.scss";
 import cn from "classnames";
+import { useState } from "react";
+import { GithubRepo } from "types/github-repo";
+import { RepoCard } from "./components/card";
+import { CardDrawer } from "./components/card/components/card-drawer";
+import styles from "./index.module.scss";
 
-type GithubCardsProps = {
+interface IProps {
   repos: Partial<GithubRepo>[];
-};
+  githubNickname: string;
+}
 
-const GithubCards: React.FC<GithubCardsProps> = ({ repos }) => {
+export const GithubCards = (props: IProps) => {
+  const [currentRepoName, setCurrentRepoName] = useState<string | undefined>();
+
   return (
     <div
       className={cn(
@@ -16,10 +20,15 @@ const GithubCards: React.FC<GithubCardsProps> = ({ repos }) => {
         styles["cards-container__content"]
       )}
     >
-      {repos.map((repo) => (
-        <RepoCard key={repo.id} repo={repo} />
+      {props.repos.map((repo) => (
+        <RepoCard key={repo.id} repo={repo} onClick={setCurrentRepoName} />
       ))}
+      <CardDrawer
+        open={Boolean(currentRepoName)}
+        onClose={() => setCurrentRepoName(undefined)}
+        repoName={currentRepoName}
+        githubNickname={props.githubNickname}
+      />
     </div>
   );
 };
-export default GithubCards;

@@ -1,9 +1,9 @@
 import styles from "./main.module.scss";
 
-type MainProps = {
+interface IProps {
   children: React.ReactNode;
-};
+}
 
-export const Main: React.FC<MainProps> = ({ children }) => {
-  return <div className={styles.main}>{children}</div>;
+export const Main = (props: IProps) => {
+  return <div className={styles.main}>{props.children}</div>;
 };

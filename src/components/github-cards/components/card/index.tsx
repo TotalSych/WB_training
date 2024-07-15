@@ -1,32 +1,37 @@
-import React from "react";
 import { GithubRepo } from "types/github-repo";
-import { CardDrawer } from "./components/card-drawer";
 import styles from "./index.module.scss";
 
-type RepoCardsProps = {
+interface IProps {
   repo: Partial<GithubRepo>;
-};
+  onClick: (repoName: string) => void;
+}
 
-const RepoCards: React.FC<RepoCardsProps> = ({ repo }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  // repoName
-  // setRepoName
-  // repo.name
-  // передать в carddrawer reponame
+export const RepoCard = (props: IProps) => {
   return (
     <div>
-      <div className={styles["repo-card"]} onClick={() => setIsOpen(true)}>
-        <p>{repo.full_name}</p>
-        <p> {repo.language}</p>
-        <p>Visibility: {repo.visibility}</p>
-        <a href={repo.url} target="_blank" rel="noopener noreferrer">
+      <div
+        className={styles["repo-card"]}
+        onClick={() => {
+          if (props.repo.name) {
+            props.onClick(props.repo.name);
+          }
+        }}
+      >
+        <p>{props.repo.full_name}</p>
+        <p> {props.repo.language}</p>
+        <p>Visibility: {props.repo.visibility}</p>
+        <a href={props.repo.url} target="_blank" rel="noopener noreferrer">
           Link to repo
         </a>
-        <p>{repo.created_at}</p>
+        <p>{props.repo.created_at}</p>
       </div>
-      <CardDrawer open={isOpen} onClose={() => setIsOpen(false)} />
     </div>
   );
 };
 
-export default RepoCards;
+// repoName
+// setRepoName
+// repo.name
+// передать в cardDrawer repoName
+// Boolean(repo.name)
+//

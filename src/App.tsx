@@ -2,7 +2,7 @@ import { Layout } from "components/layout";
 import { ThemeProvider } from "context/theme-context";
 import { BrowserRouter } from "react-router-dom";
 
-const App = () => {
+export const App = () => {
   return (
     <BrowserRouter>
       <ThemeProvider>
@@ -11,5 +11,3 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
-export default App;

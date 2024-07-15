@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 interface IProps {
@@ -6,10 +6,8 @@ interface IProps {
   setGithubNickname: (value: string) => void;
 }
 
-const DebouncedInputValue: React.FC<IProps> = ({
-  setGithubNickname,
-  githubNickname,
-}) => {
+export const DebouncedInputValue = (props: IProps) => {
+  const { githubNickname, setGithubNickname } = props;
   const [inputValue, setInputValue] = useState(githubNickname);
   const [debouncedInputValue, setDebouncedInputValue] =
     useState(githubNickname);
@@ -36,5 +34,3 @@ const DebouncedInputValue: React.FC<IProps> = ({
     />
   );
 };
-
-export default DebouncedInputValue;

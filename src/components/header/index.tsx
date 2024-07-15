@@ -1,5 +1,5 @@
 import cn from "classnames";
-import DebouncedInputValue from "components/debounced-input";
+import { DebouncedInputValue } from "components/debounced-input";
 import styles from "./index.module.scss";
 
 interface IProps {

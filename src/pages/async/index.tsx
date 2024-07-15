@@ -54,7 +54,7 @@ export const AsyncPage = () => {
           <p className={styles.error}>{error}</p>
         </Main>
       ) : (
-        <Repos repos={repos} />
+        <Repos repos={repos} githubNickname={githubNickname} />
       )}
     </>
   );

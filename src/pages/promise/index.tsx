@@ -58,7 +58,7 @@ export const PromisePage = () => {
           <p className={styles.error}>{error}</p>
         </Main>
       ) : (
-        <Repos repos={repos} />
+        <Repos repos={repos} githubNickname={githubNickname} />
       )}
     </>
   );
